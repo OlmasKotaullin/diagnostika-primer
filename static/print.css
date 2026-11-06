@@ -1,0 +1,22 @@
+/* CSS для WeasyPrint PDF — без Chart.js графиков */
+@page {
+  margin: 1.5cm 2cm;
+  size: A4;
+}
+
+canvas { display: none !important; }
+.report-header__pdf-btn { display: none !important; }
+.radar-wrap { display: none !important; }
+
+body { font-size: 12px; line-height: 1.5; }
+.report-header { padding: 1rem 1.5rem; }
+.report-header__title { font-size: 1.25rem; }
+.report-body { padding: 1rem 0; max-width: 100%; }
+.section { margin-bottom: 1.5rem; page-break-inside: avoid; }
+
+.score-block { grid-template-columns: 1fr; }
+.almaz-score__number { font-size: 3rem; }
+.cjm { flex-wrap: wrap; }
+.cjm-stage::before { display: none; }
+.cards-grid { grid-template-columns: 1fr 1fr; }
+.two-col { grid-template-columns: 1fr 1fr; }

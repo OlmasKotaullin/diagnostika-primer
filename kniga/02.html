@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Четырёхблочная диагностика маркетинга и продаж, Company Z</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#0d9488;--accent-light:#f0fdfa;--accent-border:#99f6e4;
+  --green:#16a34a;--green-bg:#f0fdf4;--green-border:#86efac;
+  --red:#b91c1c;--red-bg:#fef2f2;--red-border:#fca5a5;
+  --amber:#b45309;--amber-bg:#fffbeb;--amber-border:#fcd34d;
+  --blue:#1e40af;--blue-bg:#eff6ff;--blue-border:#bfdbfe;
+  --text:#0f172a;--text2:#475569;--text3:#94a3b8;
+  --border:#e2e8f0;--bg:#f8fafc;--bg-card:#ffffff;
+}
+html,body{height:100%}
+body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--text);background:var(--bg);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+a:hover{border-bottom-color:var(--accent)}
+strong{font-weight:700}
+
+/* фон колонки тянется на всю высоту: без него тёмная полоса обрывается на длинной странице */
+.layout{display:grid;grid-template-columns:290px 1fr;min-height:100vh;background:linear-gradient(to right,var(--text) 0,var(--text) 290px,var(--bg) 290px)}
+@media (max-width:900px){.layout{grid-template-columns:1fr;background:var(--bg)}}
+.sidebar{background:var(--text);color:#fff;padding:2rem 1.5rem;position:sticky;top:0;height:100vh;overflow-y:auto;max-height:100vh}
+@media (max-width:900px){.sidebar{position:relative;height:auto;max-height:none}}
+.brand-name{font-size:1.35rem;font-weight:800;line-height:1.25;margin-bottom:.35rem}
+.brand-name span{color:var(--accent)}
+.brand-sub{font-size:.75rem;color:#94a3b8;margin-bottom:1.6rem;line-height:1.5}
+.nav{display:flex;flex-direction:column;gap:.15rem}
+.nav-item{display:flex;gap:.65rem;align-items:flex-start;padding:.65rem .85rem;border-radius:8px;color:#cbd5e1;font-size:.85rem;line-height:1.4;transition:all .15s;border-bottom:none}
+.nav-item:hover{background:rgba(255,255,255,.06);color:#fff;border-bottom:none}
+.nav-item.active{background:var(--accent);color:#fff;font-weight:600}
+.nav-num{font-size:.7rem;opacity:.7;flex-shrink:0;margin-top:.15rem;min-width:1.5rem}
+.nav-text{flex:1}
+
+.main{padding:3rem 3.5rem;max-width:1000px}
+@media (max-width:1100px){.main{padding:2rem 1.5rem}}
+.section-meta{font-size:.78rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.7rem}
+.section-title{font-size:2.05rem;font-weight:800;line-height:1.2;margin-bottom:.9rem;letter-spacing:-.02em}
+@media (max-width:700px){.section-title{font-size:1.55rem}}
+.section-lead{font-size:1.02rem;color:var(--text2);line-height:1.7;margin-bottom:2.4rem;max-width:74ch}
+
+.content p{margin-bottom:1.1rem;font-size:1rem;line-height:1.75;max-width:78ch}
+.content h2{font-size:1.4rem;font-weight:800;margin:2.4rem 0 1rem;padding-left:.85rem;border-left:4px solid var(--accent);line-height:1.3}
+.content h3{font-size:1.06rem;font-weight:700;margin:1.7rem 0 .7rem;line-height:1.35}
+.content ul{margin:0 0 1.3rem 1.1rem;padding:0}
+.content ul li{margin-bottom:.6rem;line-height:1.7;max-width:76ch}
+.content ol{margin:0 0 1.3rem 1.3rem}
+.content ol li{margin-bottom:.6rem;line-height:1.7;max-width:76ch}
+
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.5rem;margin:1.2rem 0}
+.card-title{font-size:1rem;font-weight:800;margin-bottom:.5rem}
+.card p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.2rem 0}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:5px;letter-spacing:.02em}
+.tag-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
+.tag-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+.tag-amber{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
+.tag-accent{background:var(--accent-light);color:var(--accent);border:1px solid var(--accent-border)}
+.tag-blue{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border)}
+
+.tbl-wrap{overflow-x:auto;margin:1.4rem 0;border-radius:10px;border:1px solid var(--border);background:#fff}
+.tbl{width:100%;border-collapse:collapse;font-size:.9rem}
+.tbl th{background:var(--bg);text-align:left;padding:.8rem 1rem;font-weight:700;border-bottom:2px solid var(--border);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text3)}
+.tbl td{padding:.75rem 1rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55}
+.tbl tr:last-child td{border-bottom:none}
+.tbl .num{white-space:nowrap;font-weight:600}
+.tbl tr.now td{background:var(--accent-light)}
+.tbl tr.now td:first-child{box-shadow:inset 4px 0 0 var(--accent)}
+
+.note{font-size:.85rem;color:var(--text3);line-height:1.6;font-style:italic;margin:.8rem 0 1.4rem;max-width:80ch}
+.callout{margin:1.4rem 0;padding:1.1rem 1.3rem;border-left:3px solid var(--accent);background:var(--accent-light);border-radius:0 8px 8px 0}
+.callout p{margin-bottom:.5rem}
+.callout p:last-child{margin-bottom:0}
+.callout.warn{border-left-color:var(--red);background:var(--red-bg)}
+.callout.ok{border-left-color:var(--green);background:var(--green-bg)}
+
+.pagination{display:flex;justify-content:space-between;gap:1rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.page-link{flex:1;padding:1.05rem 1.3rem;background:var(--bg-card);border:1.5px solid var(--border);border-radius:10px;border-bottom:none;transition:all .15s;max-width:48%}
+.page-link:hover{border-color:var(--accent);background:var(--accent-light);border-bottom:1.5px solid var(--accent)}
+.page-link.next{margin-left:auto;text-align:right}
+.pl-label{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.3rem}
+.pl-title{font-size:.94rem;font-weight:700;color:var(--text);line-height:1.4}
+
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+@media (max-width:820px){.toc{grid-template-columns:1fr}}
+.toc-item{display:block;padding:1.3rem 1.5rem;background:var(--bg-card);border:1.5px solid var(--border);border-radius:12px;border-bottom:none;transition:all .15s}
+.toc-item:hover{border-color:var(--accent);background:var(--accent-light);border-bottom:1.5px solid var(--accent)}
+.toc-num{font-size:.72rem;color:var(--text3);font-weight:700;letter-spacing:.08em;margin-bottom:.35rem}
+.toc-title{font-size:1.02rem;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:.35rem}
+.toc-sub{font-size:.85rem;color:var(--text2);line-height:1.5}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand-name">Маркетинговая <span>диагностика</span></div>
+  <div class="brand-sub">Company Z<br>Ювелирная розница, Узбекистан<br>сентябрь 2026</div>
+  <nav class="nav">
+<a class="nav-item active" href="02.html"><span class="nav-num">01</span><span class="nav-text">Четырёхблочная диагностика маркетинга и продаж</span></a>
+<a class="nav-item" href="03.html"><span class="nav-num">02</span><span class="nav-text">Карта зрелости маркетинга и текущая точка</span></a>
+<a class="nav-item" href="04.html"><span class="nav-num">03</span><span class="nav-text">Карта диагностики по ролям</span></a>
+<a class="nav-item" href="06.html"><span class="nav-num">04</span><span class="nav-text">Путь от показа до повторной покупки</span></a>
+<a class="nav-item" href="07.html"><span class="nav-num">05</span><span class="nav-text">Целевая структура отдела маркетинга</span></a>
+<a class="nav-item" href="08.html"><span class="nav-num">06</span><span class="nav-text">Процессы отдела маркетинга и карта разрывов</span></a>
+  </nav>
+</aside>
+<main class="main">
+  <div class="section-meta">Раздел 01</div>
+  <h1 class="section-title">Четырёхблочная диагностика маркетинга и продаж</h1>
+  <p class="section-lead">Трафик, колл-центр, продажа в филиале, повторные покупки. Что измерено и где рвётся.</p>
+  <div class="content">
+
+<h2>Блок 1. Трафик: откуда приходят обращения</h2>
+
+<p>Июль. Расход на рекламу 22,9 тыс. долларов. Выручка с четырёх каналов
+колл-центра 5,525 млрд сум, это 466 тыс. долларов. На доллар рекламы
+приходится 20 долларов выручки, а без входящих звонков, которые рекламой
+не куплены, 17 долларов.</p>
+
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Канал</th><th>Обращений</th><th>Выручка, млрд сум</th><th>Выручка на обращение</th></tr>
+<tr><td>Таргет</td><td class="num">14 357</td><td class="num">3,886</td><td class="num">271 тыс. сум</td></tr>
+<tr><td>Instagram</td><td class="num">6 716</td><td class="num">0,400</td><td class="num">60 тыс. сум</td></tr>
+<tr><td>Входящие звонки</td><td class="num">2 564</td><td class="num">0,931</td><td class="num">363 тыс. сум</td></tr>
+<tr><td>Telegram</td><td class="num">1 445</td><td class="num">0,308</td><td class="num">213 тыс. сум</td></tr>
+</table></div>
+
+<p>Обращение из Instagram приносит вчетверо меньше денег, чем обращение
+из таргета, и вшестеро меньше входящего звонка. При этом Instagram даёт
+четверть всех обращений.</p>
+
+<h3>Чего не хватает, чтобы этим управлять</h3>
+
+<p>Рекламный бюджет разбит по трём специалистам и по двум видам кампаний:
+лидогенерация и охват. Разбивки по каналам в нём нет.</p>
+
+<div class="callout warn">
+<p>Чтобы понять, окупается ли канал, нужны три числа: сколько на него
+потратили, сколько он дал обращений и сколько принёс денег. Обращения есть,
+деньги есть, расход лежит общей суммой на трёх специалистов.</p>
+</div>
+
+<p>Отдельно надо разобрать сами названия каналов. В отчёте колл-центра
+«Таргет» и «Инстаграм» стоят разными строками, и что попадает в каждую,
+нигде не записано. Скорее всего «Таргет» это платная реклама, а «Инстаграм»
+обращения из профиля напрямую, но это надо подтвердить у команды. От ответа
+зависит вывод: у обращений из профиля рекламного расхода нет вовсе, и считать
+их окупаемость по общему бюджету неправильно.</p>
+
+<p>Тот же расход нельзя разложить и по-другому: сколько ушло на охват,
+известно (19 процентов бюджета), а что этот охват принёс, не считается вовсе.
+Мерить его заявками неправильно, он работает на узнаваемость и на приход
+в магазин напрямую. Своей меры для него пока нет.</p>
+
+<h3>Что даёт сведённый расход</h3>
+
+<p>Когда расход, обращения и выручка сведены по каждому каналу, появляется
+медиаплан. Видно, сколько денег в какой канал и что от него ждать. Сейчас разнос
+бюджета по каналам делается в конце каждого месяца, но без отдачи канала
+в деньгах.</p>
+
+<p>Дальше к плану добавляются три сценария вместо одного числа: ожидаемый
+по нормативу, выше ожидаемого и ниже ожидаемого. Норматив для этого уже есть:
+цена тысячи показов 2,10 доллара, конверсия в заявку 0,230 процента, цена
+заявки 0,913, конверсия в сделку 33 процента.</p>
+
+<div class="callout">
+<p>Три сценария нужны, чтобы решение о переносе бюджета принималось заранее.
+Если канал идёт по нижнему сценарию две недели подряд, деньги уходят в другой
+канал по заранее оговорённому правилу, а не по итогам месяца.</p>
+</div>
+
+<h2>Блок 2. Колл-центр: что происходит с обращением</h2>
+
+<p>Колл-центр свой, внутри отдела маркетинга. Четыре команды, один
+руководитель на десять операторов.</p>
+
+<p>Путь обращения виден по всем семи месяцам с января.</p>
+
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Месяц</th><th>Обращений</th><th>Назначено встреч</th><th>Пришли</th><th>Купили</th><th>Осталось в «ожидается»</th></tr>
+<tr><td>Январь</td><td class="num">18 655</td><td class="num">2 980</td><td class="num">860</td><td class="num">190</td><td class="num">2 120</td></tr>
+<tr><td>Февраль</td><td class="num">20 549</td><td class="num">4 692</td><td class="num">2 132</td><td class="num">373</td><td class="num">2 560</td></tr>
+<tr><td>Март</td><td class="num">24 818</td><td class="num">7 744</td><td class="num">2 280</td><td class="num">522</td><td class="num">5 464</td></tr>
+<tr><td>Апрель</td><td class="num">22 704</td><td class="num">7 352</td><td class="num">2 043</td><td class="num">492</td><td class="num">5 309</td></tr>
+<tr><td>Май</td><td class="num">23 921</td><td class="num">7 144</td><td class="num">2 895</td><td class="num">588</td><td class="num">4 249</td></tr>
+<tr><td>Июнь</td><td class="num">20 664</td><td class="num">6 570</td><td class="num">2 210</td><td class="num">506</td><td class="num">4 360</td></tr>
+<tr><td>Июль</td><td class="num">25 082</td><td class="num">6 506</td><td class="num">2 668</td><td class="num">568</td><td class="num">3 838</td></tr>
+<tr class="now"><td><strong>Всего</strong></td><td class="num"><strong>156 393</strong></td><td class="num"><strong>42 988</strong></td><td class="num"><strong>15 088</strong></td><td class="num"><strong>3 239</strong></td><td class="num"><strong>27 900</strong></td></tr>
+</table></div>
+
+<p>От обращения до покупки за семь месяцев доходит 2,07 процента. В статусе
+«встреча ожидается» осталось 27 900 записей, это <strong>64,9 процента всех
+назначенных встреч</strong>. По месяцам доля держится от 54,6 до 72,2 процента
+без единого исключения.</p>
+
+<div class="callout warn">
+<p>«Ожидается» это не отмена и не состоявшаяся встреча. Это запись, по которой
+ничего не записано. Кто-то из этих людей пришёл и купил позже, кто-то не пришёл
+вовсе. Понять, сколько именно, нельзя: запись не привязана к месяцу назначения,
+когорты в отчёте нет.</p>
+</div>
+
+<p>Отсюда прямое следствие: честно оценить ни один канал сейчас нельзя.
+Две трети назначенных встреч не имеют исхода, значит конверсия канала
+в покупку считается по неполному знаменателю. Доходимость 41 процент, которая
+получается по июлю, это нижняя граница, а верхняя неизвестна.</p>
+
+<h3>Сколько колл-центр приносит денег</h3>
+
+<p>Считано по строкам продаж с меткой колл-центра за три месяца, по которым
+есть выгрузки: июнь, июль и август.</p>
+
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Месяц</th><th>Сделок</th><th>Из них новых</th><th>Продажи</th><th>Средний чек</th><th>Возвратов</th></tr>
+<tr><td>Июнь</td><td class="num">569</td><td class="num">439</td><td class="num">5,21 млрд</td><td class="num">9,15 млн</td><td class="num">25</td></tr>
+<tr><td>Июль</td><td class="num">677</td><td class="num">502</td><td class="num">5,90 млрд</td><td class="num">8,71 млн</td><td class="num">28</td></tr>
+<tr><td>Август</td><td class="num">663</td><td class="num">470</td><td class="num">5,85 млрд</td><td class="num">8,82 млн</td><td class="num">31</td></tr>
+<tr class="now"><td><strong>Всего</strong></td><td class="num"><strong>1 909</strong></td><td class="num"><strong>1 411</strong></td><td class="num"><strong>16,95 млрд</strong></td><td class="num"><strong>8,88 млн</strong></td><td class="num"><strong>84</strong></td></tr>
+</table></div>
+
+<p>За вычетом возвратов на 0,99 млрд сум остаётся <strong>15,96 млрд сум,
+это 1,35 млн долларов</strong> за три месяца, около 5,3 млрд сум в месяц.</p>
+
+<p>Три четверти сделок канала это новые покупатели: 1 411 из 1 909. Средний
+чек 8,88 млн сум выше сетевого. Возвратов 4,4 процента против 11-12 по сети.
+Это самый качественный поток из тех, что есть.</p>
+
+<h2>Блок 3. Продажа в филиале</h2>
+
+<p>39 розничных филиалов, 171 продавец-консультант, медиана 25 продаж
+на человека в месяц.</p>
+
+<p>Средний чек падает <strong>шесть месяцев подряд</strong>: 9,26 млн сум
+в феврале, 8,31 в марте, 8,11 в апреле, 8,42 в мае, 8,29 в июне, 7,96 в июле,
+7,91 в августе. От февральского пика минус 14,6 процента. Число сделок за то
+же время выросло с 2 639 до 4 121.</p>
+
+<div class="callout warn">
+<p>Привлечение работает, а средний чек его обгоняет вниз. Сеть продаёт больше
+сделок за меньшие деньги каждая.</p>
+</div>
+
+<p><strong>Одна из причин видна в данных.</strong> В августе филиалы,
+работавшие с января, дали средний чек 8,47 млн сум, а открытые в 2026 году
+7,50 млн. Разница 11,5 процента. Новая точка начинает с более низкого чека:
+её ещё не знают, покупатель приходит осторожнее, берёт дешевле. Чем больше
+новых точек в сети, тем ниже средний чек по сети, даже если старые работают
+как прежде.</p>
+
+<p class="note">Это объясняет часть падения, но не всё. Полностью причину
+разложить нельзя: для этого нужно видеть чек каждого филиала по месяцам
+от даты его открытия.</p>
+
+<h3>Как карточка попадает в филиал</h3>
+
+<p>Оператор назначает встречу и передаёт карточку клиента в филиал сообщением
+в телеграм, вручную. Контроль встречи руководитель колл-центра тоже ведёт
+вручную.</p>
+
+<p>Процесс пытались автоматизировать выгрузкой в Google-таблицы. AmoCRM была
+настроена плохо и часто зависала из-за этой опции, поэтому вернулись
+к передаче через телеграм.</p>
+
+<p>После встречи оператор ставит статус: продажа или отказ. При отказе работа
+продолжается: разбирается причина, ставится пометка на повторный звонок,
+клиент возвращается, когда условия меняются. Отдельно раз в два месяца идут
+звонки по базе: закрыл ли рассрочку, появились ли новые модели.</p>
+
+<div class="callout warn">
+<p><strong>Узкое место.</strong> Процесс описан и работает, но держится
+на людях: передача сообщением, контроль глазами, возврат по пометке. Попытка
+автоматизации упёрлась в настройку AmoCRM, и на этом остановились.</p>
+</div>
+
+<p>Задача решаемая. Передача карточки из AmoCRM в филиал это стандартная
+интеграция, и причина прошлой неудачи в настройке, а не в самой возможности.
+Тот же шаг закрывает и контроль встречи: статус проставляется в системе,
+а не глазами руководителя.</p>
+
+<h2>Блок 4. Повторные покупки</h2>
+
+<p>База покупателей 66 182 человека на конец августа, за восемь месяцев
+выросла на 22 процента: в январе было 54 180. Работа с ней идёт: ежемесячный
+отбор по девяти поводам, три недельных этапа с растущим стимулом, статусы
+Silver, Gold и Diamond, отметка платёжной репутации.</p>
+
+<p>Половина сделок помечена словом «повторная». Но это слово означает только
+то, что человек покупал когда-то раньше, а не то, что он возвращается
+регулярно.</p>
+
+<h3>Сколько людей возвращается на самом деле</h3>
+
+<p>Считано по телефонам покупателей за июнь, июль и август.</p>
+
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Показатель</th><th>Июнь-август</th></tr>
+<tr><td>Уникальных покупателей</td><td class="num">9 572</td></tr>
+<tr class="now"><td>Из них купили один раз</td><td class="num">7 880, это 82,3 процента</td></tr>
+<tr><td>Приходили в разные месяцы</td><td class="num">723, это 7,6 процента</td></tr>
+<tr><td>Сделок на одного покупателя</td><td class="num">1,27</td></tr>
+</table></div>
+
+<p>То есть возвращается меньше каждого десятого. Остальные покупают один раз
+и больше не приходят, хотя половина сделок в отчётах названа повторными.</p>
+
+<p class="note">Тот же счёт по идентификатору клиента за апрель даёт 89,1
+процента разовых покупателей при 3 296 уникальных. Цифра держится на двух
+независимых выборках и на двух разных способах опознать человека.</p>
+
+<h3>Что с этим делать</h3>
+
+<p><strong>Первое. Поменять показатель.</strong> Сейчас «повторная покупка»
+означает «покупал когда-либо». По такому счёту доля повторных 52 процента,
+и она ничего не говорит о работе с базой. Нужен показатель возврата: сколько
+покупателей вернулись в течение шести месяцев после первой покупки. Считается
+он по тем же данным, менять учёт не нужно.</p>
+
+<p><strong>Второе. Начать работать с теми, кто уже купил.</strong> За три
+летних месяца 7 880 человек купили один раз и не вернулись. Это не холодная
+аудитория: они были в магазине, знают марку, оставили телефон.</p>
+
+<div class="tbl-wrap"><table class="tbl">
+<tr><th>Если вернуть</th><th>Сделок</th><th>Выручка</th></tr>
+<tr><td>3 процента</td><td class="num">236</td><td class="num">1,95 млрд сум</td></tr>
+<tr class="now"><td>5 процентов</td><td class="num">394</td><td class="num">3,25 млрд сум</td></tr>
+<tr><td>10 процентов</td><td class="num">788</td><td class="num">6,50 млрд сум</td></tr>
+</table></div>
+
+<p>Считано по среднему чеку сети 8,25 млн сум. Пять процентов возврата это
+274 тыс. долларов, то есть больше месячного оборота одного филиала.</p>
+
+<p><strong>Третье. Назначить хозяина.</strong> Сейчас рассылки ведут
+трейд-маркетолог и бренд-маркетолог в дополнение к своей работе, отдельного
+ответственного за базу нет. Пока у направления нет человека, с чьим
+результатом оно связано, показатель возврата останется отчётом, а не работой.</p>
+
+
+  </div>
+  <div class="pagination"><a class="page-link next" href="03.html"><div class="pl-label">Дальше</div><div class="pl-title">Карта зрелости маркетинга и текущая точка</div></a></div>
+</main>
+</div>
+<div style="max-width:900px;margin:0 auto 48px;padding:0 24px;font:14px/1.6 Montserrat,system-ui,sans-serif"><a href="../index.html" style="color:#64748b;text-decoration:none">К списку документов</a></div>
+</body>
+</html>

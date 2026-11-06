@@ -1,0 +1,399 @@
+/* ==========================================
+   Diagnostics by Алмаз Гатауллин
+   Design System: Trust & Authority
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Brand */
+  --accent:       #f97316;
+  --accent-hover: #ea6a00;
+  --accent-light: #fff7ed;
+  --accent-border:#fed7aa;
+
+  /* Neutral */
+  --text:         #0f172a;
+  --text2:        #475569;
+  --text3:        #94a3b8;
+  --border:       #e2e8f0;
+  --border-focus: #f97316;
+  --bg:           #f8fafc;
+  --bg-card:      #ffffff;
+  --bg-hover:     #f1f5f9;
+
+  /* Zones */
+  --zone-red-bg:    #fef2f2;
+  --zone-red-text:  #b91c1c;
+  --zone-yellow-bg: #fffbeb;
+  --zone-yellow-text: #92400e;
+  --zone-green-bg:  #f0fdf4;
+  --zone-green-text: #065f46;
+  --zone-blue-bg:   #eff6ff;
+  --zone-blue-text: #1e40af;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+
+  /* Transitions */
+  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== BASE ===== */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fira Code для числовых данных */
+.font-mono, .score-number, .metric-value {
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+/* ===== FOCUS STATES (accessibility) ===== */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================
+   FORM PAGE
+   ========================================== */
+
+.page-form {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Header */
+.form-header {
+  background: var(--text);
+  color: #fff;
+  padding: 0.875rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 2px solid var(--accent);
+}
+.form-header__brand {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+.form-header__sub {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Progress bar */
+.form-progress {
+  background: #1e293b;
+  padding: 0.625rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.form-progress__track {
+  flex: 1;
+  height: 4px;
+  background: #334155;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.form-progress__fill {
+  height: 4px;
+  background: var(--accent);
+  border-radius: 999px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+.form-progress__label {
+  font-size: 0.75rem;
+  color: #64748b;
+  white-space: nowrap;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Form layout */
+.diag-form {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+}
+
+/* Sections */
+.form-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
+}
+.form-section:focus-within {
+  box-shadow: var(--shadow-md);
+}
+.form-section--scored {
+  border-left: 3px solid var(--accent);
+}
+
+.form-section__label {
+  position: absolute;
+  top: -14px;
+  left: 1.25rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fira Code', monospace;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
+}
+
+.form-section__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.form-section__badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent-border);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+}
+@media (max-width: 580px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* Fields */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.form-field--wide { grid-column: 1 / -1; }
+
+.form-field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.form-field label .required-star {
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.form-field input,
+.form-field select {
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-card);
+  color: var(--text);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  cursor: text;
+}
+.form-field select { cursor: pointer; }
+
+.form-field input:hover,
+.form-field select:hover {
+  border-color: #cbd5e1;
+}
+.form-field input:focus,
+.form-field select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+.form-field input::placeholder { color: var(--text3); }
+
+/* Number inputs */
+.form-field input[type="number"] {
+  font-family: 'Fira Code', monospace;
+}
+
+/* Checkbox grid */
+.checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  transition: all var(--transition);
+  user-select: none;
+}
+.checkbox-item:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--text);
+}
+.checkbox-item input {
+  cursor: pointer;
+  accent-color: var(--accent);
+  width: 15px;
+  height: 15px;
+}
+.checkbox-item:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  font-weight: 500;
+}
+
+/* Questions */
+.questions-list { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.question { }
+.question__text {
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.radio-group { display: flex; flex-direction: column; gap: 0.35rem; }
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.55rem 0.875rem;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  transition: all var(--transition);
+  user-select: none;
+  color: var(--text2);
+}
+.radio-item:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--text);
+}
+.radio-item input {
+  accent-color: var(--accent);
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.radio-item:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Submit */
+.form-submit {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.btn-submit {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+  min-width: 220px;
+}
+.btn-submit:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.4);
+}
+.btn-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+.btn-submit:disabled {
+  background: #cbd5e1;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+.form-submit__hint {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text3);
+}
+
+/* ==========================================
+   SKELETON (generating page)
+   ========================================== */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}

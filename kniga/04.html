@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Карта диагностики по ролям, Company Z</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --accent:#0d9488;--accent-light:#f0fdfa;--accent-border:#99f6e4;
+  --green:#16a34a;--green-bg:#f0fdf4;--green-border:#86efac;
+  --red:#b91c1c;--red-bg:#fef2f2;--red-border:#fca5a5;
+  --amber:#b45309;--amber-bg:#fffbeb;--amber-border:#fcd34d;
+  --blue:#1e40af;--blue-bg:#eff6ff;--blue-border:#bfdbfe;
+  --text:#0f172a;--text2:#475569;--text3:#94a3b8;
+  --border:#e2e8f0;--bg:#f8fafc;--bg-card:#ffffff;
+}
+html,body{height:100%}
+body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--text);background:var(--bg);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+a:hover{border-bottom-color:var(--accent)}
+strong{font-weight:700}
+
+/* фон колонки тянется на всю высоту: без него тёмная полоса обрывается на длинной странице */
+.layout{display:grid;grid-template-columns:290px 1fr;min-height:100vh;background:linear-gradient(to right,var(--text) 0,var(--text) 290px,var(--bg) 290px)}
+@media (max-width:900px){.layout{grid-template-columns:1fr;background:var(--bg)}}
+.sidebar{background:var(--text);color:#fff;padding:2rem 1.5rem;position:sticky;top:0;height:100vh;overflow-y:auto;max-height:100vh}
+@media (max-width:900px){.sidebar{position:relative;height:auto;max-height:none}}
+.brand-name{font-size:1.35rem;font-weight:800;line-height:1.25;margin-bottom:.35rem}
+.brand-name span{color:var(--accent)}
+.brand-sub{font-size:.75rem;color:#94a3b8;margin-bottom:1.6rem;line-height:1.5}
+.nav{display:flex;flex-direction:column;gap:.15rem}
+.nav-item{display:flex;gap:.65rem;align-items:flex-start;padding:.65rem .85rem;border-radius:8px;color:#cbd5e1;font-size:.85rem;line-height:1.4;transition:all .15s;border-bottom:none}
+.nav-item:hover{background:rgba(255,255,255,.06);color:#fff;border-bottom:none}
+.nav-item.active{background:var(--accent);color:#fff;font-weight:600}
+.nav-num{font-size:.7rem;opacity:.7;flex-shrink:0;margin-top:.15rem;min-width:1.5rem}
+.nav-text{flex:1}
+
+.main{padding:3rem 3.5rem;max-width:1000px}
+@media (max-width:1100px){.main{padding:2rem 1.5rem}}
+.section-meta{font-size:.78rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.7rem}
+.section-title{font-size:2.05rem;font-weight:800;line-height:1.2;margin-bottom:.9rem;letter-spacing:-.02em}
+@media (max-width:700px){.section-title{font-size:1.55rem}}
+.section-lead{font-size:1.02rem;color:var(--text2);line-height:1.7;margin-bottom:2.4rem;max-width:74ch}
+
+.content p{margin-bottom:1.1rem;font-size:1rem;line-height:1.75;max-width:78ch}
+.content h2{font-size:1.4rem;font-weight:800;margin:2.4rem 0 1rem;padding-left:.85rem;border-left:4px solid var(--accent);line-height:1.3}
+.content h3{font-size:1.06rem;font-weight:700;margin:1.7rem 0 .7rem;line-height:1.35}
+.content ul{margin:0 0 1.3rem 1.1rem;padding:0}
+.content ul li{margin-bottom:.6rem;line-height:1.7;max-width:76ch}
+.content ol{margin:0 0 1.3rem 1.3rem}
+.content ol li{margin-bottom:.6rem;line-height:1.7;max-width:76ch}
+
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.5rem;margin:1.2rem 0}
+.card-title{font-size:1rem;font-weight:800;margin-bottom:.5rem}
+.card p:last-child{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.2rem 0}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+
+.tag{display:inline-block;font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:5px;letter-spacing:.02em}
+.tag-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
+.tag-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+.tag-amber{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
+.tag-accent{background:var(--accent-light);color:var(--accent);border:1px solid var(--accent-border)}
+.tag-blue{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border)}
+
+.tbl-wrap{overflow-x:auto;margin:1.4rem 0;border-radius:10px;border:1px solid var(--border);background:#fff}
+.tbl{width:100%;border-collapse:collapse;font-size:.9rem}
+.tbl th{background:var(--bg);text-align:left;padding:.8rem 1rem;font-weight:700;border-bottom:2px solid var(--border);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text3)}
+.tbl td{padding:.75rem 1rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55}
+.tbl tr:last-child td{border-bottom:none}
+.tbl .num{white-space:nowrap;font-weight:600}
+.tbl tr.now td{background:var(--accent-light)}
+.tbl tr.now td:first-child{box-shadow:inset 4px 0 0 var(--accent)}
+
+.note{font-size:.85rem;color:var(--text3);line-height:1.6;font-style:italic;margin:.8rem 0 1.4rem;max-width:80ch}
+.callout{margin:1.4rem 0;padding:1.1rem 1.3rem;border-left:3px solid var(--accent);background:var(--accent-light);border-radius:0 8px 8px 0}
+.callout p{margin-bottom:.5rem}
+.callout p:last-child{margin-bottom:0}
+.callout.warn{border-left-color:var(--red);background:var(--red-bg)}
+.callout.ok{border-left-color:var(--green);background:var(--green-bg)}
+
+.pagination{display:flex;justify-content:space-between;gap:1rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.page-link{flex:1;padding:1.05rem 1.3rem;background:var(--bg-card);border:1.5px solid var(--border);border-radius:10px;border-bottom:none;transition:all .15s;max-width:48%}
+.page-link:hover{border-color:var(--accent);background:var(--accent-light);border-bottom:1.5px solid var(--accent)}
+.page-link.next{margin-left:auto;text-align:right}
+.pl-label{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.3rem}
+.pl-title{font-size:.94rem;font-weight:700;color:var(--text);line-height:1.4}
+
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+@media (max-width:820px){.toc{grid-template-columns:1fr}}
+.toc-item{display:block;padding:1.3rem 1.5rem;background:var(--bg-card);border:1.5px solid var(--border);border-radius:12px;border-bottom:none;transition:all .15s}
+.toc-item:hover{border-color:var(--accent);background:var(--accent-light);border-bottom:1.5px solid var(--accent)}
+.toc-num{font-size:.72rem;color:var(--text3);font-weight:700;letter-spacing:.08em;margin-bottom:.35rem}
+.toc-title{font-size:1.02rem;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:.35rem}
+.toc-sub{font-size:.85rem;color:var(--text2);line-height:1.5}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand-name">Маркетинговая <span>диагностика</span></div>
+  <div class="brand-sub">Company Z<br>Ювелирная розница, Узбекистан<br>сентябрь 2026</div>
+  <nav class="nav">
+<a class="nav-item" href="02.html"><span class="nav-num">01</span><span class="nav-text">Четырёхблочная диагностика маркетинга и продаж</span></a>
+<a class="nav-item" href="03.html"><span class="nav-num">02</span><span class="nav-text">Карта зрелости маркетинга и текущая точка</span></a>
+<a class="nav-item active" href="04.html"><span class="nav-num">03</span><span class="nav-text">Карта диагностики по ролям</span></a>
+<a class="nav-item" href="06.html"><span class="nav-num">04</span><span class="nav-text">Путь от показа до повторной покупки</span></a>
+<a class="nav-item" href="07.html"><span class="nav-num">05</span><span class="nav-text">Целевая структура отдела маркетинга</span></a>
+<a class="nav-item" href="08.html"><span class="nav-num">06</span><span class="nav-text">Процессы отдела маркетинга и карта разрывов</span></a>
+  </nav>
+</aside>
+<main class="main">
+  <div class="section-meta">Раздел 03</div>
+  <h1 class="section-title">Карта диагностики по ролям</h1>
+  <p class="section-lead">Кто что делает сейчас, что из этого видно в данных и где у каждой роли разрыв.</p>
+  <div class="content">
+
+<h2>Руководитель отдела маркетинга</h2>
+
+<div class="card">
+<div class="card-title">Что сделано</div>
+<p>Отдел построен с нуля примерно за год. Работает регулярный менеджмент:
+ежедневный отчёт, разбор по понедельникам лично, месячные отчёты по каждому
+подразделению, планирование в конце месяца с разносом по каналам
+и исполнителям.</p>
+<p>Собрана воронка колл-центра по месяцам, от обращения до покупки,
+с разбивкой по четырём источникам. Введён план-факт по каждому специалисту
+в рекламе, помесячно и понедельно. Ведётся база покупателей с профессией,
+возрастом и статусом, восемь месячных срезов по 39 филиалам.</p>
+</div>
+
+<div class="callout">
+<p>Уровень детализации отчётности здесь выше, чем обычно бывает в рознице
+такого размера. Данные собираются, процессы описаны, ритм держится.</p>
+</div>
+
+<h3>В чём разрыв</h3>
+
+<p>Один человек тянет пять направлений сразу: рекламу, колл-центр, трейд,
+бренд и работу с базой. При этом два участка требуют отдельных рук и отдельной
+головы, и именно на них сейчас теряются деньги.</p>
+
+<h2>Кого не хватает</h2>
+
+<h3>Аналитик</h3>
+
+<div class="card">
+<div class="card-title">Что закрывает</div>
+<ul>
+<li>Сводит AmoCRM, 1С и рекламные кабинеты в одну панель, которая собирается
+сама, без ручного заполнения таблиц.</li>
+<li>Доводит до конца проставление источника: в AmoCRM, в 1С и у входящих
+звонков. Без этого нельзя сказать, какой канал привёл покупателя.</li>
+<li>Строит когорты: покупка привязывается к месяцу первого обращения,
+и становится видна реальная доходимость вместо нижней границы.</li>
+<li>Считает окупаемость каждого канала в деньгах, а не в заявках.</li>
+</ul>
+</div>
+
+<p><strong>Какой разрыв закрывает.</strong> Сейчас 64,9 процента назначенных
+встреч за семь месяцев остаются без исхода, а расход по каналам лежит общей
+суммой на трёх специалистов. Пока это так, бюджет распределяется по цене
+заявки, а не по возврату денег.</p>
+
+<h3>CRM-маркетолог</h3>
+
+<div class="card">
+<div class="card-title">Что закрывает</div>
+<ul>
+<li>Возврат тех, кто записался и не дошёл: напоминание, подтверждение визита,
+повторное касание в течение месяца.</li>
+<li>Работа с базой по сегментам: профессия, возраст, давность покупки,
+статус рассрочки.</li>
+<li>Акции, рассылки и обзвоны под конкретный сегмент, а не на всю базу
+одинаково.</li>
+<li>Счёт денег от базы отдельной строкой: сколько принёс возврат клиентов.</li>
+</ul>
+</div>
+
+<p><strong>Какой разрыв закрывает.</strong> За три летних месяца 7 880
+покупателей купили один раз и не вернулись, это 82,3 процента всех
+покупателей периода. Возврат даже пяти процентов из них даёт 394 сделки
+и около 3,25 млрд сум. Сейчас рассылки ведут трейд-маркетолог
+и бренд-маркетолог в дополнение к своей работе, отдельного ответственного
+за базу нет.</p>
+
+<div class="callout warn">
+<p>Обе роли работают на одну задачу: довести клиента от первого обращения
+до второй покупки и увидеть в деньгах, сколько это стоило и сколько принесло.
+Аналитик даёт картину, CRM-маркетолог по ней работает.</p>
+</div>
+
+  </div>
+  <div class="pagination"><a class="page-link" href="03.html"><div class="pl-label">Назад</div><div class="pl-title">Карта зрелости маркетинга и текущая точка</div></a><a class="page-link next" href="06.html"><div class="pl-label">Дальше</div><div class="pl-title">Путь от показа до повторной покупки</div></a></div>
+</main>
+</div>
+<div style="max-width:900px;margin:0 auto 48px;padding:0 24px;font:14px/1.6 Montserrat,system-ui,sans-serif"><a href="../index.html" style="color:#64748b;text-decoration:none">К списку документов</a></div>
+</body>
+</html>
